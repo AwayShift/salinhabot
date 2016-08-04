@@ -2024,24 +2024,7 @@
                     }
                 }
             },
-            
-                dueloCommand: {
-                command: 'duelo',
-                rank: 'user',
-                type: 'startsWith',
-                    functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        if(chat.message.length === cmd.length) return API.sendChat('/me No user specified.');
-                        var name = chat.message.substring(cmd.length + 2);
-                        var user = basicBot.userUtilities.lookupUserName(name);
-                        if(typeof user === 'boolean') return API.sendChat('/me Invalid user specified.');
-                        if text.startswith('Aceitar') return API.sendchat (+ name + '/me Aceitou o duelo')
-                    }
-                    },
       
-            
             cycleCommand: {
                 command: 'cycle',
                 rank: 'manager',
