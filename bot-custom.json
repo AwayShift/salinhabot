@@ -2,7 +2,7 @@
    "room": "SoundLover",
    "author": "Eumesmo",
    "icon": null,
-   "css": "https://rawgit.com/Kslinghook/Bot-Teste/master/bot.css",
+   "css": "https://rawgit.com/AwayShift/salinhabot/master/bot.css",
    "rules": {
       "allowAutorespond": true,
       "allowAutowoot": true,
