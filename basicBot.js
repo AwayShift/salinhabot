@@ -2038,6 +2038,9 @@
                         var user = basicBot.userUtilities.lookupUserName(name);
                         if(typeof user === 'boolean') return API.sendChat('/me Invalid user specified.');
                         if text.startswith('Aceitar') return API.sendchat (+ name + '/me Aceitou o duelo')
+                    }
+                    },
+      
             
             cycleCommand: {
                 command: 'cycle',
