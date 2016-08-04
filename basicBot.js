@@ -98,7 +98,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/Kslinghook/Bot-Teste/master/pt-BR.json", function (json) {
+        $.get("https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -240,9 +240,9 @@
         status: false,
         name: "Bot de Teste",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/Kslinghook/Bot-Teste/master/basicBot.js",
+        scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/Kslinghook/Bot-Teste/master/pt-BR.json",
+        chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -250,8 +250,8 @@
         settings: {
             botName: "Bot de Teste",
             language: "portuguese",
-            chatLink: "https://rawgit.com/Kslinghook/Bot-Teste/master/pt-BR.json",
-            scriptLink: "https://rawgit.com/Kslinghook/Bot-Teste/master/basicBot.js",
+            chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
+            scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 30, // 0-100
@@ -309,9 +309,9 @@
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Kslinghook/custom/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/Kslinghook/custom/master/blacklists/OPlist.json",
-                BANNED: "https://rawgit.com/Kslinghook/custom/master/blacklists/BANNEDlist.json"
+                NSFW: "https://rawgit.com/AwayShift/custom/master/blacklists/NSFWlist.json",
+                OP: "https://rawgit.com/AwayShift/custom/master/blacklists/OPlist.json",
+                BANNED: "https://rawgit.com/AwayShift/custom/master/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -2542,7 +2542,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/Kslinghook/Bot-Teste/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/basicbot/source/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
@@ -2964,7 +2964,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            $.getScript('https://rawgit.com/Kslinghook/Bot-Teste/master/bots.js');
+                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/bots.js');
                     }
                 }
             },
@@ -3810,5 +3810,5 @@
         }
     };
     loadChat(basicBot.startup);
-    $.getScript('https://rawgit.com/Kslinghook/Bot-Teste/master/entrada.js');
+    $.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
 }).call(this);
