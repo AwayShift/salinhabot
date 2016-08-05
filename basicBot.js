@@ -2968,44 +2968,6 @@
                     }
                 }
             },
-                ocultarCommand: {
-                command: 'ocultar',
-                rank: 'manager',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/ocultar.css');
-                    }
-                }
-            },
-                chatoCommand: {
-                command: 'chato',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.nouserspecified, {name: chat.un}));
-                        var name = msg.substring(cmd.length + 2);
-                        var user = basicBot.userUtilities.lookupUserName(name);
-                        if (user === false) return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
-                        var votes = user.votes;
-                        var ratio = vratio.woot / vratio.meh;
-                        var pos = API.getWaitListPosition(user.id); // 0 = primeira pos - -1 = nao esta na lista
-                        	if (basicBot.settings.smartSkip && timeLeft > timeElapsed){
-					API.sendChat('/me ' + msg + ' ' + name + ' ' + user + ' ' + votes + ' ' + ratio + ' ' + pos + ' ');
-				}
-				else {
-					API.moderateForceSkip();
-				}
-		    
-                    }
-                }
-            },
 
             removeCommand: {
                 command: 'remove',
