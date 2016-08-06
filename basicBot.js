@@ -26,7 +26,7 @@
     };
 
     var kill = function () {
-        clearInterval(basicBot.room.autodisableInterval);
+        clearInterval(basicBot.room.autodisableInterval);b
         clearInterval(basicBot.room.afkInterval);
         basicBot.status = false;
     };
@@ -2968,6 +2968,18 @@
                     }
                 }
             },
+                chatonCommand: {
+                command: 'chaton',
+                rank: 'manager',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                            $.getScript('https://www.dropbox.com/s/n6oofi4b137v7ae/Chat.js?dl=0');
+                    }
+                }
+            },
 
             removeCommand: {
                 command: 'remove',
@@ -3785,5 +3797,4 @@
     };
     loadChat(basicBot.startup);
     $.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
-    $.getScript('https://www.dropbox.com/s/n6oofi4b137v7ae/Chat.js?dl=0');
 }).call(this);
