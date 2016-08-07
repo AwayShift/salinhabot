@@ -2981,15 +2981,16 @@
                     }
                 }
             },
-                chatonCommand: {
-                command: 'chaton',
+                ocultarCommand: {
+                command: 'ocultar',
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/chat.js');
+                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/ocultar.css');
+                            API.sendChat("Oculto!");
                     }
                 }
             },
