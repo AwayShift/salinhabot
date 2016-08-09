@@ -1,4 +1,4 @@
-#chat-messages .fromID- .badge-box i,
+#chat-messages .fromID- .badge-box i {
    width: 100%; 
 	border-radius: 2px;
 	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
