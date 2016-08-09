@@ -276,7 +276,8 @@
     border-radius: 8px;
 }
 #playlist-button {
-    background: #36d04f !important;
+       background: linear-gradient(to bottom,#36D04F 0,#167E32 100%)no-repeat !important;
+    background-size: 100% 54px;
 }
 
 #playlist-button {
@@ -314,7 +315,8 @@ border-radius: 8px;
     background: linear-gradient(to right,rgba(255, 118, 118, 0) 0,rgba(44, 124, 41, 0.27) 100%) !important;
 }
 #dj-button .left {
-    background: #36d04f !important;
+       background: linear-gradient(to bottom,#36D04F 0,#167E32 100%)no-repeat !important;
+    background-size: 100% 54px;
     border-radius: 8px !important;
 }
 #dj-button.is-leave .left, #dj-button.is-quit .left {
