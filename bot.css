@@ -1,3 +1,7 @@
+#app-menu.in-room {
+    background: linear-gradient(to bottom,#36D04F 0,#167E32 100%)no-repeat;
+    background-size: 100% 54px;
+}
 #footer {
     background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25) 0,rgba(0, 0, 0, 0.75) 100%);
 }
