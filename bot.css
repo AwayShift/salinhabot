@@ -1,5 +1,9 @@
 /* playback*/
-<img src='https://cdn.plug.dj/_/static/images/community/videoframe.e7ab48fd1cf6af66e4d39c52714494beb35787a2.png' style="width:0px; height:0px; padding: 8px; background: url(http://i.imgur.com/rnOG4ht.png);">
+#playback .background img {
+	width:0;
+	height:0;
+	padding:490px 0 0 274px;/* image width (160px) and height (61px) */
+	background:url(http://i.imgur.com/rnOG4ht.png) no-repeat 0 0;
 }
 /* Interface */
 
