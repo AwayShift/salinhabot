@@ -4,7 +4,7 @@
   height:234px;
   box-sizing:border-box;
   padding-left: 418px;
-  left: 33px;
+  padding-right: 234px;
   /*width of the image*/
   background: url(http://i.imgur.com/rnOG4ht.png) left top no-repeat;
 }
