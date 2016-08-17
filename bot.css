@@ -1,12 +1,5 @@
 /* playback*/
-#playback .background img {
-  display: block;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: url(http://i.imgur.com/rnOG4ht.png) no-repeat;
-  width: 490px; /* Width of new image */
-  height: 274px; /* Height of new image */
-  padding-left: 490px; /* Equal to width of new image */
+<img src='https://cdn.plug.dj/_/static/images/community/videoframe.e7ab48fd1cf6af66e4d39c52714494beb35787a2.png' style="width:0px; height:0px; padding: 8px; background: url(http://i.imgur.com/rnOG4ht.png);">
 }
 /* Interface */
 
