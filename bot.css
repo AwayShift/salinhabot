@@ -6,7 +6,7 @@
     background: rgba(206,25,55,0.8);
 /*Icone de XP*/
 .icon {
-    background-image: url('http://i.imgur.com/PeXTkSh.png');
+    background-image: url('http://i.imgur.com/PeXTkSh.png') !important;
 }
 /*Chat bg*/
 #chat-input {
@@ -14,7 +14,7 @@
 }
 
 /*Caixas de dialogo(borda)*/
-#dashboard .search .focused {
+.focused {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
 
 /*BG Dashboard*/
@@ -30,34 +30,14 @@
 }
 /*Lista das salas*/
 .communities .grid .cell .bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    width: 100%;
-    height: 43px;
     background: rgba(0,0,0,0.5) !important;
 }
 .communities .grid .cell {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    margin: 0 15px 15px 0;
-    width: 250px;
-    height: 300px;
     background: rgba(0,0,0,0.5) !important;
-    cursor: pointer;
 }
 .communities .grid .cell:hover>.meta {
-    margin-top: 43px;
-    height: 257px;
     background: rgba(40,40,40,0.7) !important;
-    transition: all .15s ease-out;
 }
-.communities .grid .cell .favorite {
-    top: 0;
-    right: 0;
-    width: 43px;
-    height: 43px;
+.communities .grid .cell .favorite {;
     background: rgba(206,25,55,0.7) !important;
 }
