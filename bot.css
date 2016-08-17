@@ -1,3 +1,9 @@
+/* playback*/
+#playback .background img {
+    position: absolute;
+    background: url ('http://i.imgur.com/rnOG4ht.png') !important;
+    top: 0;
+}
 /* Interface */
 
 #footer-user .info {
