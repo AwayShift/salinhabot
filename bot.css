@@ -14,11 +14,11 @@
 }
 
 /*Caixas de dialogo(borda)*/
-#dashboard .focused {
+#dashboard .search .focused {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
 
 /*BG Dashboard*/
-#dashboard  {
+#dashboard.app-left.communities {
     background: rgba(0,0,0,0.5) !important;
 }
 /*Menu dashboard*/
