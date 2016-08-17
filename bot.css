@@ -241,6 +241,7 @@ i.icon.icon-room {
 /*Caixas de dialogo(borda)*/
 #chat-input.focused {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
+   box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8)!important;
 }
 
 /*BG Dashboard*/
@@ -265,6 +266,9 @@ i.icon.icon-room {
 }
 .communities .grid .cell:hover>.meta {
     background: rgba(40,40,40,0.7);
+}
+.communities .grid .cell .meta {
+    background: none !important;
 }
 .communities .grid .cell .favorite {
     background: rgba(206,25,55,0.7);
