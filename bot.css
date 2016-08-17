@@ -1,7 +1,7 @@
 /* playback*/
 #playback .background img {
     position: absolute;
-    background: url ('http://i.imgur.com/rnOG4ht.png') !important;
+    background: url ('http://i.imgur.com/rnOG4ht.png') no-repeat;
     top: 0;
 }
 /* Interface */
