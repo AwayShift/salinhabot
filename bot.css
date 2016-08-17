@@ -1,28 +1,28 @@
 /*Barra de XP*/
 .experience .xp .bar .progress {
-    background: rgba(206,25,55,0.8);
+    background: rgba(206,25,55,0.8) !important;
 }
 #footer-user .info .bar .progress {
-    background: rgba(206,25,55,0.8);
+    background: rgba(206,25,55,0.8) !important;
+}
 /*Icone de XP*/
 .icon {
-    background-image: url('http://i.imgur.com/PeXTkSh.png');
+    background-image: url('http://i.imgur.com/PeXTkSh.png') !important;
 }
 /*Chat bg*/
 #chat-input {
     background: rgba(111,101,101,0.1) !important;
 }
-
 /*Caixas de dialogo(borda)*/
 .focused {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
 }
 /*Menu dashboard*/
 .tab-menu button.selected {
-    background: rgba(206,25,55,0.8);
+    background: rgba(206,25,55,0.8) !important;
 }
 .tab-menu button {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5) !important;
 }
 /*Lista das salas*/
 .communities .grid .cell .bar {
@@ -32,7 +32,7 @@
     z-index: 3;
     width: 100%;
     height: 43px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5) !important;
 }
 .communities .grid .cell {
     position: relative;
@@ -41,13 +41,13 @@
     margin: 0 15px 15px 0;
     width: 250px;
     height: 300px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5) !important;
     cursor: pointer;
 }
 .communities .grid .cell:hover>.meta {
     margin-top: 43px;
     height: 257px;
-    background: rgba(40,40,40,0.7);
+    background: rgba(40,40,40,0.7) !important;
     transition: all .15s ease-out;
 }
 .communities .grid .cell .favorite {
@@ -55,7 +55,7 @@
     right: 0;
     width: 43px;
     height: 43px;
-    background: rgba(206,25,55,0.7);
+    background: rgba(206,25,55,0.7) !important;
 }
 #footer {
     background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25) 0,rgba(0, 0, 0, 0.75) 100%);
@@ -193,9 +193,6 @@
 }
 .room-background {
     left: 0 !important;
-}
-.icon {
-    background-image: url('http://i.imgur.com/vqbG2OE.png');
 }
 .icon-radiant-clearchat {
     position: absolute;
