@@ -2,7 +2,8 @@
 #playback .background img {
 	width:0;
 	height:0;
-	padding:490px 0 0 274px;/* image width (160px) and height (61px) */
+	padding:318px 0 0 234px;/* image width (160px) and height (61px) */
+	left: 33px;
 	background:url(http://i.imgur.com/rnOG4ht.png) no-repeat 0 0;
 }
 /* Interface */
