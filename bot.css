@@ -1,13 +1,3 @@
-/* playback*/
-#playback .background img {
-  width:418px;
-  height:234px;
-  box-sizing:border-box;
-  padding-left: 418px;
-  padding-right: 234px;
-  /*width of the image*/
-  background: url(http://i.imgur.com/rnOG4ht.png) left top no-repeat;
-}
 }
 /* Interface */
 
