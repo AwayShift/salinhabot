@@ -243,7 +243,7 @@ i.icon.icon-room {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
    box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8)!important;
 }
-#dasboard.focused .search {
+#dasboard.focused.search {
    -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
    box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8)!important;
 }
