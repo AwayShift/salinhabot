@@ -70,12 +70,12 @@
 }
 
 #chat-input.focused {
-   -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
-   box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
+   -webkit-box-shadow: inset 0 0 0 1px rgba(25,206,74,0.8) !important;
+   box-shadow: inset 0 0 0 1px rgba(25,206,74,0.8) !important;
 }
 .search.focused {
-   -webkit-box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
-   box-shadow: inset 0 0 0 1px rgba(206,25,55,0.8) !important;
+   -webkit-box-shadow: inset 0 0 0 1px rgba(25,206,74,0.8) !important;
+   box-shadow: inset 0 0 0 1px rgba(25,206,74,0.8) !important;
 }
 #footer {
     background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25) 0,rgba(0, 0, 0, 0.75) 100%);
