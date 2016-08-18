@@ -1,3 +1,7 @@
+/*RCS Sidebar*/
+#rcs-toggled-sidebar li[style] {
+    .app-right {right: -345px;} #playback {left: 436px !important; } #avatars-container {left: 275.5px !important; } #vote {left: initial !important; right: 116.5px !important; }
+} 
 /*Menu dashboard*/
 .tab-menu button.selected {
     background: rgba(25,206,74,0.8);
