@@ -5,6 +5,9 @@
 #user-rollover .info {
     background: rgba(0,0,0,.1);
 }
+#user-rollover .actions .action:hover {
+    background: rgba(206,25,55,0.2);
+}
 /*Menu dashboard*/
 .tab-menu button.selected {
     background: rgba(25,206,74,0.8);
