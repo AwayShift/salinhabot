@@ -1,7 +1,12 @@
 /* BG Grab*/
 .votes-rs {
-    background: rgba(0,0,0,.4);
-    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 200px;
+    width: 256px;
+    margin-top: -200px;
+    z-index: 100;
+    background: rgba(0,0,0,.4) !important;
+    position: absolute;
+    border-bottom: 1px solid #000;
 }
 /*Info de User*/
 #user-rollover {
