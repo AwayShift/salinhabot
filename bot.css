@@ -1,3 +1,8 @@
+/* BG Grab*/
+.votes-rs {
+    background: rgba(0,0,0,.4);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
 /*Info de User*/
 #user-rollover {
     background: rgba(0,0,0,.4);
