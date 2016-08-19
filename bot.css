@@ -1,3 +1,10 @@
+/*Info de User*/
+#user-rollover {
+    background: rgba(0,0,0,.4);
+}
+#user-rollover .info {
+    background: rgba(0,0,0,.1);
+}
 /*Menu dashboard*/
 .tab-menu button.selected {
     background: rgba(25,206,74,0.8);
