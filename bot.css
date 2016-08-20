@@ -1,3 +1,7 @@
+/* BG Leveis */
+div.level.earned.ep .label {
+    background: rgba(206,25,55,0.5) !important;
+}
 /* BG Grab*/
 .votes-rs {
     height: 200px;
