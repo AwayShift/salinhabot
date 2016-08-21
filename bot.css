@@ -1,3 +1,11 @@
+/* Zoom */
+#chat-messages .fromID- .badge-box i, #chat-messages .badge-box i:hover {
+    width: 75px;
+    height: 75px;
+    transition: 0.5s;
+    background-position: initial;
+    background-repeat: no-repeat !important;
+}
 /* BG Leveis */
 div.level.earned.ep .label {
     background: rgba(22,128,43,0.5) !important;
