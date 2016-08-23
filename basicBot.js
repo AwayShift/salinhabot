@@ -2964,7 +2964,7 @@
                         basicBot.disconnectAPI();
                         kill();
                         setTimeout(function () {
-                            $.getScript(basicBot.settings.scriptLink);
+                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/basicBot.js');
                         }, 2000);
                     }
                 }
