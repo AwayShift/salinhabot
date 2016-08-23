@@ -15,3 +15,4 @@ function theTest(val) {
   } 
   return answer;  
   }
+   theTest(9);
