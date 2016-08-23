@@ -1,4 +1,7 @@
 API.sendChat("Online");
+
+var expr = default;
+
 switch (expr) {
   case "Oranges":
     API.sendChat("Oranges are $0.59 a pound.");
@@ -19,5 +22,3 @@ switch (expr) {
   default:
     API.sendChat("Sorry, we are out of " + expr + ".");
 }
-
-console.log("Is there anything else you'd like?");
