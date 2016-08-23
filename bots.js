@@ -88,9 +88,9 @@
                 switch (cmd){
                     case 'botsoff':
                         if (!msgData.staff) return;
-                        bots.util.sendChat('@' + msgData.un + ' Desligando SimSimi e ED bot...');
+                        API.sendChat("!cmddel");
                         setTimeout(function () {
-                        API.sendChat("!cmddel");;
+                        bots.util.sendChat('@' + msgData.un + ' Desligando SimSimi e ED bot...');
                         }, 2000);
                         bots.events.off();
                         break;
