@@ -236,7 +236,7 @@
     var botCreatorIDs = ["3851534", "4105209", "6500812"];
 
     var basicBot = {
-        version: "2",
+        version: "1",
         status: false,
         name: "Bot de Teste",
         loggedInID: null,
@@ -295,7 +295,7 @@
             motdEnabled: false,
             motdInterval: 5,
             motd: "Temporary Message of the Day",
-            filterChat: false,
+            filterChat: true,
             etaRestriction: false,
             welcome: true,
             opLink: null,
@@ -3798,5 +3798,4 @@
     };
     loadChat(basicBot.startup);
     $.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
-    $.getScript('https://rawgit.com/AwayShift/salinhabot/master/response.js');
 }).call(this);
