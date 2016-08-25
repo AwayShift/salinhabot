@@ -1,3 +1,49 @@
+/* CORES CHAT */
+/* HOST */
+#user-lists .group.host {
+	color: #DB182E;
+	top: 1px;
+}
+.icon-chat-host + span,
+#user-lists .group.host ~ .user span,
+#dialog-user-role .role-menu .menu ul .host span {
+	color: #DB182E !important;
+}
+#user-lists .group {
+    border: none !important;
+    box-shadow: 0 0 1px 1px;
+}
+/* COORDENADOR */
+#user-lists .group.manager {
+	color: #EF5636;
+}
+#user-lists .group.manager ~ .user span,
+#dialog-user-role .role-menu .menu ul .manager span {
+	color: #EF5636 !important;
+}
+.icon-chat-manager + span,
+#user-lists .group.manager ~ .user span,
+#dialog-user-role .role-menu .menu ul .manager span {
+	color: #EF5636 !important;
+}
+/* SEGURANÇA */
+#user-lists .group.bouncer {
+	color: #05ABE4;
+}
+.icon-chat-bouncer + span,
+#user-lists .group.bouncer ~ .user span,
+#dialog-user-role .role-menu .menu ul .bouncer span {
+	color: #05ABE4 !important;
+}
+/* DJ RESIDENT */
+#user-lists .group.dj {
+	color: #7936E8;
+}
+.icon-chat-dj + span,
+#user-lists .group.dj ~ .user span,
+#dialog-user-role .role-menu .menu ul .dj span {
+	color: #7936E8 !important;
+}
 /* Zoom */
 #chat-messages .fromID- .badge-box i, #chat-messages .badge-box {
         -webkit-transform: scale(1);
