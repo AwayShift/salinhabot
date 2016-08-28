@@ -1,0 +1,19 @@
+<a class="but" href="http://www.mainframe.blog.br" target="_blank">Normal Button</a>
+<button type="button" onclick="window.open('https://www.google.com.br');">Normal Button</button>
+
+/* BOTÃO BÁSICO */
+.but {
+display: inline-block;
+background-color: #ccc;
+color: #444;
+padding: 10px 20px;
+text-decoration: none;
+box-sizing: border-box;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+border: 0px;
+}
+.but:hover {
+background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+cursor: pointer;
+}
