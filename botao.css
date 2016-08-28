@@ -3,6 +3,11 @@
 
 /* BOTÃO BÁSICO */
 .but {
+position: absolute;
+left: -20px;
+width: 20px;
+height: 20px;
+cursor: pointer;
 display: inline-block;
 background-color: #ccc;
 color: #444;
