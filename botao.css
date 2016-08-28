@@ -1,21 +1,36 @@
-/* BOTÃO BÁSICO */
-.but {
-position: absolute;
-left: -20px;
-width: 20px;
-height: 20px;
-cursor: pointer;
-display: inline-block;
-background-color: #ccc;
-color: #444;
-padding: 10px 20px;
+<head>
+<style type="text/css">
+<!--
+.botao  {
+position:absolute;
+top:20px;
+left:50px;
+margin:0px;
+padding:0px;
+}
+
+.botao a, .botao a:visited {  
+font: bold 12px/24px arial, helvetica, sans-aerif;	
+padding:0px;
 text-decoration: none;
-box-sizing: border-box;
-font-family: Helvetica, Arial, sans-serif;
-font-size: 14px;
-border: 0px;
+text-align:center;	
+color:#fff;
+background: #666 url('botao_link.gif') no-repeat 
+center center;	
+width:120px;  
+height:24px;	
+display:block;	
 }
-.but:hover {
-background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
-cursor: pointer;
+
+.botao a:hover { 
+background: #666 url('botao_hover.gif') no-repeat 
+center center;
+color:#999;
 }
+
+</style>
+</head>
+<body>
+<p class="botao">
+<a href="#" title="Meu Link">Botão CSS</a>
+</p>
