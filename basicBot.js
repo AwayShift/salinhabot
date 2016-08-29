@@ -1726,9 +1726,10 @@
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    var = setInterval(function(){("Evento teste"); }, 5000);
                     else {
-                        API.sendChat(subChat(basicBot.chat.myVar));
+                        setInterval(function () {
+                        API.sendChat("Evento teste");
+                        }, 5000);
                     }
                 },
 
