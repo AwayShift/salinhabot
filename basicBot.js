@@ -1720,9 +1720,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        setInterval(function () {
-                            API.sendChat('Teste evento');
-                        }, 5000);
+                        API.sendChat('Teste evento');
                     }
                 },
 
