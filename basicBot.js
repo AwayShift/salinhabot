@@ -1723,7 +1723,7 @@
                     var delay = setInterval(function () { 
                     API.sendChat("Evento teste"); 
                     }, 10000);
-                    API.sendChat(delay);
+                    API.sendChat("/me Evento liberado!");
                     }
                 }
             },
@@ -1735,6 +1735,9 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
+                    var delay = setInterval(function () { 
+                    API.sendChat("Evento teste"); 
+                    }, 10000);
                     clearInterval(delay);
                     API.sendChat("/me Evento encerrado!");
                     }
