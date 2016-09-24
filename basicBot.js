@@ -2959,11 +2959,25 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.pong)
+                   API.sendChat(basicBot.chat.pong)
+                   function ping(func, wait) {
+                    var timeout;
+                   return function() {
+                   var context = this, args = arguments;
+                    if (!timeout) {
+                    // the first time the event fires, we setup a timer, which 
+                    // is used as a guard to block subsequent calls; once the 
+                    // timer's handler fires, we reset it and create a new one
+                    timeout = setTimeout(function() {
+                   timeout = 3000;
+                 func.apply(context, args);
+                    }, wait);
                     }
                 }
-            },
-
+            }
+          }
+        },
+            
             refreshCommand: {
                 command: 'refresh',
                 rank: 'manager',
