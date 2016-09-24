@@ -2960,18 +2960,6 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                    API.sendChat(basicBot.chat.pong)
-                  (function(ping, undefined){
-                  var canCall = true;
-                  ping.funcName = function(){
-                  if (!canCall) 
-                  return;
-                    //Your function
-                     canCall = false;
-                     setTimeout(function(){
-                      canCall = true;
-                     }, 500);
-                     }
-                   })(window);
                   }
                 },
             
