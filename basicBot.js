@@ -19,7 +19,7 @@
     };
 
     var kill = function () {
-        clearInterval(basicBot.room.autodisableInterval);b
+        clearInterval(basicBot.room.autodisableInterval);
         clearInterval(basicBot.room.afkInterval);
         clearInterval(basicBot.room.automsg);
         basicBot.status = false;
