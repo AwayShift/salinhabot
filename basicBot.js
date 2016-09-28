@@ -271,7 +271,7 @@
             maximumSongLength: 10,
             autodisable: true,
             commandCooldown: 30,
-            automsg:true,
+            automsg: true,
             usercommandsEnabled: true,
             thorCommand: false,
             thorCooldown: 10,
