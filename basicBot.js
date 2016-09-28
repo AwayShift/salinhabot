@@ -1369,10 +1369,6 @@
                     }
                 }
             };
-            setTimeout(myFunction, 3000)
-            function myFunction() {
-            API.sendchat('Hello');
-                 }
             Check = setInterval(function(){ detect() }, 2000);
 
             retrieveSettings();
@@ -2963,19 +2959,6 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                    API.sendChat(basicBot.chat.pong)
-                  }
-                },
-                
-                pingCommand: {
-                command: 'ping',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                    myVar = setTimeout(myFunction, 3000)
-                    clearTimeout(myVar);
                   }
                 },
                 
