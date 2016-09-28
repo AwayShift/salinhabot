@@ -21,6 +21,7 @@
     var kill = function () {
         clearInterval(basicBot.room.autodisableInterval);b
         clearInterval(basicBot.room.afkInterval);
+        clearInterval(basicBot.room.automsg);
         basicBot.status = false;
     };
 
@@ -270,6 +271,7 @@
             maximumSongLength: 10,
             autodisable: true,
             commandCooldown: 30,
+            automsg:true,
             usercommandsEnabled: true,
             thorCommand: false,
             thorCooldown: 10,
@@ -325,6 +327,12 @@
                 if (basicBot.status && basicBot.settings.autodisable) {
                     API.sendChat('!afkdisable');
                     API.sendChat('!joindisable');
+                }
+            },
+            automsgInterval: null,
+            automsgFunc: function () {
+                if (basicBot.status && basicBot.settings.automsg) {
+                    API.chatLog('!mensagens');
                 }
             },
             queueing: 0,
@@ -1408,6 +1416,9 @@
             basicBot.room.afkInterval = setInterval(function () {
                 basicBot.roomUtilities.afkCheck()
             }, 10 * 1000);
+            basicBot.room.automsg = setInterval(function () {
+            basicBot.room.automsgFunc();
+            }, 2 * 60 * 1000);
             basicBot.room.autodisableInterval = setInterval(function () {
                 basicBot.room.autodisableFunc();
             }, 60 * 60 * 1000);
@@ -1665,6 +1676,26 @@
                 }
             },
 
+              automsgCommand: {
+                command: 'automsg',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.automsg) {
+                            basicBot.settings.automsg = !basicBot.settings.automsg;
+                            return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.automsg}));
+                        }
+                        else {
+                            basicBot.settings.automsg = !basicBot.settings.automsg;
+                            return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.automsg}));
+                        }
+                    }
+                }
+            },
+            
             autoskipCommand: {
                 command: 'autoskip',
                 rank: 'mod',
