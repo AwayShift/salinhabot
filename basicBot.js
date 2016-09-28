@@ -1417,7 +1417,7 @@
                 basicBot.roomUtilities.afkCheck()
             }, 10 * 1000);
             basicBot.room.automsg = setInterval(function () {
-            basicBot.room.automsgFunc();
+                basicBot.room.automsgFunc();
             }, 2 * 60 * 1000);
             basicBot.room.autodisableInterval = setInterval(function () {
                 basicBot.room.autodisableFunc();
