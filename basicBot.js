@@ -3798,4 +3798,5 @@
     };
     loadChat(basicBot.startup);
     $.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
+    $.getScript('https://rawgit.com/Awayshift/salinhabot/master/Grab.js');
 }).call(this);
