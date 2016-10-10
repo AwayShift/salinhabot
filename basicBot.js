@@ -363,6 +363,13 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
+            function do_this(){
+            var now = new Date();
+            var currentHour = now.getHours();
+            if(currentHour < 9 && currentHour > 18) return;
+            API.sendchat("/me Comando");
+            }
+            setInterval( function(){ do_this(); } , 1000*60);
             roulette: {
                 rouletteStatus: false,
                 participants: [],
