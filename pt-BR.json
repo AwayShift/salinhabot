@@ -147,7 +147,7 @@
     "timeguard": "timeguard",
     "chatfilter": "chatfilter",
     "historyskip": "historyskip",
-    "lockdown": "lockdown",
+    "lockdown": "lockdown(Chat disponnivel somente para staff)",
     "lockguard": "lockguard",
     "usercommands": "comandos de usu\u00e1rio",
     "motd": "MotD",
