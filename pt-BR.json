@@ -80,7 +80,7 @@
     "welcome": "Sai daqui, @%%NAME%%",
     "welcomeback": "Esqueceu o que?, @%%NAME%%",
     "songknown": "@%%NAME%%, essa m\u00fasica est\u00e1 no hist\u00f3rico.",
-    "notavailable": "\/me @%%NAME%%, a m\u00fasica que voc\u00ea tocou n\u00e3o est\u00e1 dispon\u00edvel.",
+    "notavailable": "\/me @%%NAME%%, Música indisponível.",
     "timelimit": "@%%NAME%%, sua m\u00fasica tem dura\u00e7\u00e3o maior que %%MAXLENGTH%% minutos. Voc\u00ea precisa ter permiss\u00e3o para tocar m\u00fasicas longas.",
     "permissionownsong": "\/me :up: @%%NAME%% tem permiss\u00e3o para tocar m\u00fasica de pr\u00f3pria autoria!",
     "isblacklisted": "\/me Essa m\u00fasica est\u00e1 na lista negra %%BLACKLIST%%! Pulando m\u00fasica...",
