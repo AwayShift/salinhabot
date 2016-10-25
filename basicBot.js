@@ -232,12 +232,13 @@
 
     var botCreator = "Yemasthui";
     var botMaintainer = "Benzi"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botMexedor = "♫SoundLover♫"
+    var botCreatorIDs = ["3851534", "4105209", "6500812"];
 
     var basicBot = {
         version: "1",
         status: false,
-        name: "Salinha Bot",
+        name: "baiscBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -247,7 +248,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "Salinha Bot",
             language: "portuguese",
             chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
             scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
@@ -275,10 +276,10 @@
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: false,
-            commandCooldown: 10,
+            commandCooldown: 5,
             usercommandsEnabled: true,
             thorCommand: true,
-            thorCooldown: 10,
+            thorCooldown: 1,
             skipPosition: 1,
             skipReasons: [
                 ["theme", "This song does not fit the room theme. "],
@@ -1160,7 +1161,7 @@
                     return true;
                 }
                 if (basicBot.settings.lockdownEnabled) {
-                    if (perm === 0) {
+                    if (perm < 2) {
                         API.moderateDeleteChat(chat.cid);
                         return true;
                     }
