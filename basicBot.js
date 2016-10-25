@@ -376,18 +376,25 @@
                 participants: [],
                 countdown: null,
                 startRoulette: function () {
+                    var pos = (basicBot.settings.roulettepos);
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function () {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat(basicBot.chat.isopen);
+                    setTimeout(function () {
+                        API.sendChat(basicBot.chat.isopen);
+                    }, 1 * 1000);
+                    setTimeout(function () {
+                        API.sendChat(subChat(basicBot.chat.isopen2, { position: pos}));
+                    }, 2 * 1000);
                 },
                 endRoulette: function () {
                     basicBot.room.roulette.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
-                    var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    /*var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);*/
+                    var pos = (basicBot.settings.roulettepos);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
@@ -1579,6 +1586,27 @@
                                 return API.sendChat(subChat(basicBot.chat.brigar, {nameto: user.username, namefrom: chat.un, brigar: this.getBrigar()}));
                             }
                         }
+                    }
+                }
+            },
+	
+	       autorouletteCommand: {
+                command: 'autoroulette',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.autoroulette) {
+                            basicBot.settings.autoroulette = !basicBot.settings.autoroulette;
+                            return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.autoroulette}));
+                        }
+                        else {
+                            basicBot.settings.autoroulette = !basicBot.settings.autoroulette;
+                            return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.autoroulette}));
+                        }
+
                     }
                 }
             },
