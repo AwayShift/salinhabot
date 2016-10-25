@@ -27,6 +27,7 @@
 
     var kill = function () {
         clearInterval(basicBot.room.autodisableInterval);
+	clearInterval(basicBot.room.autorouletteInterval);
         clearInterval(basicBot.room.afkInterval);
         basicBot.status = false;
     };
