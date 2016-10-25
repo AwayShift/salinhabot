@@ -235,9 +235,9 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "2.9.1",
+        version: "1",
         status: false,
-        name: "basicBot",
+        name: "Salinha Bot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -252,15 +252,15 @@
             chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
             scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
-            startupCap: 1, // 1-200
-            startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupCap: 5, // 1-200
+            startupVolume: 35, // 0-100
+            startupEmoji: true, // true or false
             autowoot: true,
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
             maximumAfk: 120,
-            afkRemoval: true,
+            afkRemoval: false,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
@@ -275,11 +275,11 @@
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: false,
-            commandCooldown: 30,
+            commandCooldown: 10,
             usercommandsEnabled: true,
-            thorCommand: false,
+            thorCommand: true,
             thorCooldown: 10,
-            skipPosition: 3,
+            skipPosition: 1,
             skipReasons: [
                 ["theme", "This song does not fit the room theme. "],
                 ["op", "This song is on the OP list. "],
@@ -294,7 +294,7 @@
             motdEnabled: false,
             motdInterval: 5,
             motd: "Temporary Message of the Day",
-            filterChat: true,
+            filterChat: false,
             etaRestriction: false,
             welcome: true,
             opLink: null,
@@ -1534,6 +1534,42 @@
                     }
                 }
             },
+            
+            brigarCommand: {
+                command: 'brigar',
+                rank: 'user',
+                type: 'startsWith',
+                getBrigar: function (chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.brigas.length);
+                    return basicBot.chat.brigas[c];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+
+                        var space = msg.indexOf(' ');
+                        if (space === -1) {
+                            API.sendChat(basicBot.chat.eatbrigar);
+                            return false;
+                        }
+                        else {
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nouserbrigar, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfbrigar, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.brigar, {nameto: user.username, namefrom: chat.un, brigar: this.getBrigar()}));
+                            }
+                        }
+                    }
+                }
+            },
 
             addCommand: {
                 command: 'add',
@@ -1755,6 +1791,7 @@
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permUser >= permFrom) return void(0);
                         API.moderateBanUser(user.id, 1, API.BAN.DAY);
+                        API.sendChat('/me @' + user.username + ' Conheceu o martelo do ban :hammer:');
                     }
                 }
             },
@@ -3093,7 +3130,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
+                        API.sendChat('/me Este bot foi criado por ' + botCreator + ', mas agora é mantido por ' + botMaintainer +  ', e sendo fuçado por ' + botMexedor +  ".");
                     }
                 }
             },
