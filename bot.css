@@ -1,5 +1,3 @@
-@import ("https://rawgit.com/AwayShift/salinhabot/master/botao.css");
-@import ("https://rawgit.com/AwayShift/salinhabot/master/botao2.css");
 /* CORES CHAT */
 /* HOST */
 #user-lists .group.host {
@@ -45,34 +43,6 @@
 #user-lists .group.dj ~ .user span,
 #dialog-user-role .role-menu .menu ul .dj span {
 	color: #7936E8 !important;
-}
-/* Zoom */
-#chat-messages .fromID- .badge-box i, #chat-messages .badge-box {
-        -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-#chat-messages .fromID- .badge-box i, #chat-messages .badge-box i:hover {
-    -webkit-transform:scale(1.3); /*Webkit: Scale up image to 1.2x original size*/
-    -moz-transform:scale(1.3); /*Mozilla scale version*/
-    -o-transform:scale(1.3); /*Opera scale version*/
-    transition: 0.5s;
-    background-position: initial;
-    background-repeat: no-repeat !important;
-}
-#chat-messages .clickable:hover {
-    width: 75px;
-    height: 75px;
-    transition: 0.5s;
-}
-
-#chat .message:nth-child(2n+1), #chat .mention:nth-child(2n+1), #chat .skip:nth-child(2n+1), #chat .moderation:nth-child(2n+1), #chat .emote:nth-child(2n+1), #chat .update:nth-child(2n+1), #chat .welcome:nth-child(2n+1) {
-    overflow: hidden;
-}
-
-#chat [data-cid^="5394376-"].emote {
-    overflow: hidden;
 }
 /* BG Leveis */
 div.level.earned.ep .label {
@@ -365,14 +335,14 @@ div.level.earned.ep .label {
     background: linear-gradient(to right,rgba(255, 118, 118, 0) 0,rgba(44, 124, 41, 0.27) 100%);
 }
 #chat .from {
-    font-family: Ubuntu, sans-serif;
+    font-family: Ubuntu, serif;
     position: relative;
     margin-bottom: 3px;
     font-size: 13px;
 }
 
 #chat-input-field {
-    font-family: Ubuntu, sans-serif;
+    font-family: Ubuntu, serif;
     position: absolute;
     top: 7px;
     left: 10px;
@@ -385,7 +355,7 @@ div.level.earned.ep .label {
     font-size: 13px;
 }
 #chat-messages {
-    font-family: Ubuntu, sans-serif;
+    font-family: Ubuntu, serif;
     position: absolute;
     top: 47px;
     left: 0;
@@ -393,7 +363,7 @@ div.level.earned.ep .label {
     overflow-y: auto;
     width: 100%;
     color: #e2f4e2;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #playlist-panel {
