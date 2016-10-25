@@ -270,6 +270,8 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
+            autoroulette: true,
+	        roulettepos: 2,
             voteSkip: false,
             voteSkipLimit: 10,
             historySkip: false,
@@ -332,6 +334,12 @@
                 if (basicBot.status && basicBot.settings.autodisable) {
                     API.sendChat('!afkdisable');
                     API.sendChat('!joindisable');
+                }
+            },
+                        autorouletteInterval: null,
+            autorouletteFunc: function () {
+                if (basicBot.status && basicBot.settings.autoroulette) {
+                    API.chatLog('!roleta');
                 }
             },
             queueing: 0,
@@ -2987,7 +2995,7 @@
             },
 
             rouletteCommand: {
-                command: 'roulette',
+                command: 'roleta',
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
