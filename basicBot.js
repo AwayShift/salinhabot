@@ -22,11 +22,11 @@
                 return i;
             }
         }
-        return -1;b
+        return -1;
     };
 
     var kill = function () {
-        clearInterval(basicBot.room.autodisableInterval);b
+        clearInterval(basicBot.room.autodisableInterval);
         clearInterval(basicBot.room.afkInterval);
         basicBot.status = false;
     };
@@ -98,7 +98,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json", function (json) {
+        $.get("$.get("https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -232,13 +232,12 @@
 
     var botCreator = "Yemasthui";
     var botMaintainer = "Benzi"
-    var botMexedor = "♫SoundLover♫"
-    var botCreatorIDs = ["3851534", "4105209", "6500812"];
+    var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "1",
+        version: "2.9.1",
         status: false,
-        name: "Bot de Teste",
+        name: "basicBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -248,20 +247,20 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Bot de Teste",
-            language: "portuguese",
+            botName: "basicBot",
+            language: "english",
             chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
             scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
-            startupVolume: 30, // 0-100
-            startupEmoji: true, // true or false
+            startupVolume: 0, // 0-100
+            startupEmoji: false, // true or false
             autowoot: true,
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
             maximumAfk: 120,
-            afkRemoval: false,
+            afkRemoval: true,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
@@ -275,7 +274,7 @@
             historySkip: false,
             timeGuard: true,
             maximumSongLength: 10,
-            autodisable: true,
+            autodisable: false,
             commandCooldown: 30,
             usercommandsEnabled: true,
             thorCommand: false,
@@ -309,9 +308,9 @@
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/AwayShift/custom/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/AwayShift/custom/master/blacklists/OPlist.json",
-                BANNED: "https://rawgit.com/AwayShift/custom/master/blacklists/BANNEDlist.json"
+                NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
+                OP: "https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json",
+                BANNED: "https://rawgit.com/basicBot/custom/master/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -327,14 +326,11 @@
             afkInterval: null,
             //autoskip: false,
             autoskipTimer: null,
-            autodisableInterval: 60,
-            autodisableFunc: function do_this(){
-                var now = new Date();
-                var currentHour = now.getHours();
-                if(currentHour < 9 && currentHour > 18) return; {
+            autodisableInterval: null,
+            autodisableFunc: function () {
+                if (basicBot.status && basicBot.settings.autodisable) {
                     API.sendChat('!afkdisable');
                     API.sendChat('!joindisable');
-               setInterval( function(){ do_this(); } , 1000*60);
                 }
             },
             queueing: 0,
@@ -966,7 +962,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === "undefined") {
-                    API.sendChat("/me " + lastplay.media.author + " - " + lastplay.media.title + ": " + lastplay.score.positive + "woot" + lastplay.score.grabs + "grab" + lastplay.score.negative + "meh.")
+                    API.sendChat("/me " + lastplay.media.author + " - " + lastplay.media.title + ": " + lastplay.score.positive + "W/" + lastplay.score.grabs + "G/" + lastplay.score.negative + "M.")
                 }
                 else {
                     API.sendChat(subChat(basicBot.chat.songstatistics, {artist: lastplay.media.author, title: lastplay.media.title, woots: lastplay.score.positive, grabs: lastplay.score.grabs, mehs: lastplay.score.negative}))
@@ -1759,7 +1755,6 @@
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permUser >= permFrom) return void(0);
                         API.moderateBanUser(user.id, 1, API.BAN.DAY);
-                        API.sendChat('/me @' + user.username + ' Conheceu o martelo do ban :hammer:');
                     }
                 }
             },
@@ -1886,29 +1881,17 @@
                     }
                 }
             },
-                 clearlocalstorageCommand: {
-                 command: 'clearlocalstorage',
-                 rank: 'manager',
-                  type: 'exact',
-                  functionality: function (chat, cmd) {
-                      if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                      if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                      else {
-                         localStorage.clear();
-                         API.chatLog('Cleared localstorage, please refresh the page!');
-                      }
-                  }
-              },
 
-            commandsCommand: {
-                command: 'commands',
-                rank: 'user',
+            clearlocalstorageCommand: {
+                command: 'clearlocalstorage',
+                rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(subChat(basicBot.chat.commandslink, {botname: basicBot.settings.botName, link: basicBot.cmdLink}));
+                        localStorage.clear();
+                        API.chatLog('Cleared localstorage, please refresh the page!');
                     }
                 }
             },
@@ -1929,6 +1912,19 @@
                             basicBot.settings.cmdDeletion = !basicBot.settings.cmdDeletion;
                             API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.cmddeletion}));
                         }
+                    }
+                }
+            },
+
+            commandsCommand: {
+                command: 'commands',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(subChat(basicBot.chat.commandslink, {botname: basicBot.settings.botName, link: basicBot.cmdLink}));
                     }
                 }
             },
@@ -1968,79 +1964,7 @@
                     }
                 }
             },
-            
-                xingarCommand: {
-                command: 'xingar',
-                rank: 'user',
-                type: 'startsWith',
-                getXingar: function (chat) {
-                    var c = Math.floor(Math.random() * basicBot.chat.chingamentos.length);
-                    return basicBot.chat.chingamentos[c];
-                },
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
 
-                        var space = msg.indexOf(' ');
-                        if (space === -1) {
-                            API.sendChat(basicBot.chat.eatchingar);
-                            return false;
-                        }
-                        else {
-                            var name = msg.substring(space + 2);
-                            var user = basicBot.userUtilities.lookupUserName(name);
-                            if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nouserchingar, {name: name}));
-                            }
-                            else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfchingar, {name: name}));
-                            }
-                            else {
-                                return API.sendChat(subChat(basicBot.chat.chingar, {nameto: user.username, namefrom: chat.un, chingar: this.getXingar()}));
-                            }
-                        }
-                    }
-                }
-            },
-            
-                brigarCommand: {
-                command: 'brigar',
-                rank: 'user',
-                type: 'startsWith',
-                getBrigar: function (chat) {
-                    var c = Math.floor(Math.random() * basicBot.chat.brigas.length);
-                    return basicBot.chat.brigas[c];
-                },
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-
-                        var space = msg.indexOf(' ');
-                        if (space === -1) {
-                            API.sendChat(basicBot.chat.eatbrigar);
-                            return false;
-                        }
-                        else {
-                            var name = msg.substring(space + 2);
-                            var user = basicBot.userUtilities.lookupUserName(name);
-                            if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nouserbrigar, {name: name}));
-                            }
-                            else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfbrigar, {name: name}));
-                            }
-                            else {
-                                return API.sendChat(subChat(basicBot.chat.brigar, {nameto: user.username, namefrom: chat.un, brigar: this.getBrigar()}));
-                            }
-                        }
-                    }
-                }
-            },
-      
             cycleCommand: {
                 command: 'cycle',
                 rank: 'manager',
@@ -2558,7 +2482,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/basicbot/source/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
@@ -2972,18 +2896,6 @@
                     }
                 }
             },
-                botsonCommand: {
-                command: 'botson',
-                rank: 'manager',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/bots.js');
-                    }
-                }
-            },
 
             removeCommand: {
                 command: 'remove',
@@ -3181,7 +3093,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat('/me Este bot foi criado por ' + botCreator + ', mas agora é mantido por ' + botMaintainer +  ', e sendo fuçado por ' + botMexedor +  ".");
+                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
                     }
                 }
             },
@@ -3798,9 +3710,57 @@
                 }
             }
         }
-    };
-    
+    },
+	
+	            botsonCommand: {
+                command: 'botson',
+                rank: 'manager',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/bots.js');
+                    }
+                }
+            },
+	
+	      brigarCommand: {
+                command: 'brigar',
+                rank: 'user',
+                type: 'startsWith',
+                getBrigar: function (chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.brigas.length);
+                    return basicBot.chat.brigas[c];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+
+                        var space = msg.indexOf(' ');
+                        if (space === -1) {
+                            API.sendChat(basicBot.chat.eatbrigar);
+                            return false;
+                        }
+                        else {
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nouserbrigar, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfbrigar, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.brigar, {nameto: user.username, namefrom: chat.un, brigar: this.getBrigar()}));
+                            }
+                        }
+                    }
+                }
+            };
+
     loadChat(basicBot.startup);
-    $.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
-    $.getScript('https://rawgit.com/Awayshift/salinhabot/master/Grab.js');
+	$.getScript('https://rawgit.com/AwayShift/salinhabot/master/entrada.js');
 }).call(this);
