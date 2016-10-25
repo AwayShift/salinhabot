@@ -2967,7 +2967,7 @@
                         basicBot.disconnectAPI();
                         kill();
                         setTimeout(function () {
-                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/basicBot.js');
+                            $.getScript(basicBot.settings.scriptLink);
                         }, 2000);
                     }
                 }
@@ -2980,7 +2980,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            $.getScript(basicBot.settings.scriptLink);
+                            $.getScript('https://rawgit.com/AwayShift/salinhabot/master/bots.js');
                     }
                 }
             },
