@@ -1427,6 +1427,9 @@
             basicBot.room.autodisableInterval = setInterval(function () {
                 basicBot.room.autodisableFunc();
             }, 60 * 60 * 1000);
+             basicBot.room.autorouletteInterval = setInterval(function () {
+                basicBot.room.autorouletteFunc();
+            }, 5 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
             basicBot.status = true;
             API.sendChat('/cap ' + basicBot.settings.startupCap);
