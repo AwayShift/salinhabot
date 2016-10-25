@@ -248,7 +248,7 @@
         retrieveFromStorage: retrieveFromStorage,
         settings: {
             botName: "basicBot",
-            language: "english",
+            language: "portuguese",
             chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
             scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
