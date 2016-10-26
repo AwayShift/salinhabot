@@ -3037,14 +3037,11 @@
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
 			var g_iCount = new Number();
- 
                         // de 30 a 0 //
                         var g_iCount = 30;
- 
                          function startCountdown(){
                          if((g_iCount - 1) >= 0){
                           g_iCount = g_iCount - 1;
-                          numberCountdown.innerText = '00:00.0' + g_iCount;
                           setTimeout('startCountdown()',1000);
 			 else	{
 		         API.sendchat("MSG");
