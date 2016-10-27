@@ -283,6 +283,7 @@
             usercommandsEnabled: true,
             thorCommand: true,
             thorCooldown: 1,
+	    rouletteCooldown: 1,
             skipPosition: 1,
             skipReasons: [
                 ["theme", "This song does not fit the room theme. "],
@@ -3036,16 +3037,18 @@
                     else {
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
-                        var g_iCount = 30;
-                         function startCountdown(){
-                         if((g_iCount - 1) >= 0){
-                          g_iCount = g_iCount - 1;
-                          setTimeout('startCountdown()',1000);
-			 else	{
-		         API.sendchat("MSG");
-                              }
-                           }
-                        }
+                              oldTime = 0,
+                              usedroulette = false,
+                              indexArrUsedroulette,
+                              rouletteCd = false,
+                              timeInMinutes = 0,
+		            if (usedroulette) {
+                            timeInMinutes = (basicBot.settings.rouletteCooldown + 1) - (Math.floor((oldTime - Date.now()) * Math.pow(10, -5)) * -1);
+                            rouletteCd = timeInMinutes > 0 ? true : false;
+                            if (rouletteCd == false)
+                            basicBot.room.usersUsedroulette.splice(indexArrUsedroulette, 1);
+			    return API.sendChat(subChat(basicBot.chat.roulettecd, {name: from, time: timeInMinutes}));
+			    }
                     }
                 }
             },
