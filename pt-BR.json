@@ -228,6 +228,7 @@
     "songstatistics": "\/me %%ARTIST%% - %%TITLE%%: %%WOOTS%%W\/%%GRABS%%G\/%%MEHS%%M.",
     "thorNotClose": "\/me @%%NAME%% você não é digno nem de chegar perto do martelo.",
     "thorcd": "\/me @%%NAME%% você pode levantar o martelo em %%TIME%% minutos.",
+    "roulettecd": "\/me @%%NAME%% roleta em %%TIME%% minutos.",
     "thorWorthy": "\/me @%%NAME%% você é digno do martelo :hammer:. Parabéns!",
     "thorNotWorthy": "\/me @%%NAME%% você não é digno do martelo."
 }
