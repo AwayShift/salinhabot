@@ -283,7 +283,6 @@
             usercommandsEnabled: true,
             thorCommand: true,
             thorCooldown: 1,
-	    rouletteCooldown: 1,
             skipPosition: 1,
             skipReasons: [
                 ["theme", "This song does not fit the room theme. "],
@@ -405,8 +404,7 @@
                     }, 1 * 1000, winner, pos);
                 }
             },
-            usersUsedThor: [],
-	    UsersUsedRoulette: []
+            usersUsedThor: []
         },
         User: function (id, name) {
             this.id = id;
