@@ -3038,37 +3038,6 @@
                     else { 
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
-                              var id = chat.uid,
-                              isDj = API.getDJ().id == id ? true : false,
-                              from = chat.un,
-                              djlist = API.getWaitList(),
-                              inDjList = false,
-                              oldTime = 0,
-                              usedRoulette = false,
-                              indexArrUsedRoulette,
-                              rouletteCd = false,
-                              timeInMinutes = 0,
-                         if (inDjList) {
-                              for (var i = 0; i < basicBot.room.usersUsedRoulette.length; i++) {
-                                  if (basicBot.room.usersUsedRoulette[i].id == id) {
-                                      oldTime = basicBot.room.usersUsedRoulette[i].time;
-                                      usedRoulette = true;
-                                      indexArrUsedRoulette = i;
-                                  }
-                              }
-
-                              if (usedRoulette) {
-                                  timeInMinutes = (basicBot.settings.rouletteCooldown + 1) - (Math.floor((oldTime - Date.now()) * Math.pow(10, -5)) * -1);
-                                  rouletteCd = timeInMinutes > 0 ? true : false;
-                                  if (rouletteCd == false)
-                                      basicBot.room.usersUsedRoulette.splice(indexArrUsedRoulette, 1);
-                              }
-
-                          }
-
-                          if (!inDjList) {
-                              return API.sendChat(subChat(basicBot.chat.roulettecd, {name: from, time: timeInMinutes}));
-                    }
 	          }
                 }
             },
