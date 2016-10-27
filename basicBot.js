@@ -405,7 +405,8 @@
                     }, 1 * 1000, winner, pos);
                 }
             },
-            usersUsedThor: []
+            usersUsedThor: [],
+	    UsersUsedRoulette: []
         },
         User: function (id, name) {
             this.id = id;
@@ -3023,7 +3024,7 @@
                             basicBot.settings.etaRestriction = !basicBot.settings.etaRestriction;
                             return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.etarestriction}));
                         }
-                    }
+		    }
                 }
             },
 
@@ -3034,22 +3035,47 @@
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+                    else { 
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
+                              var id = chat.uid,
+                              isDj = API.getDJ().id == id ? true : false,
+                              from = chat.un,
+                              djlist = API.getWaitList(),
+                              inDjList = false,
                               oldTime = 0,
-                              usedroulette = false,
-                              indexArrUsedroulette,
+                              usedRoulette = false,
+                              indexArrUsedRoulette,
                               rouletteCd = false,
                               timeInMinutes = 0,
-		            if (usedroulette) {
-                            timeInMinutes = (basicBot.settings.rouletteCooldown + 1) - (Math.floor((oldTime - Date.now()) * Math.pow(10, -5)) * -1);
-                            rouletteCd = timeInMinutes > 0 ? true : false;
-                            if (rouletteCd == false)
-                            basicBot.room.usersUsedroulette.splice(indexArrUsedroulette, 1);
-			    return API.sendChat(subChat(basicBot.chat.roulettecd, {name: from, time: timeInMinutes}));
-			    }
+                         if (inDjList) {
+                              for (var i = 0; i < basicBot.room.usersUsedRoulette.length; i++) {
+                                  if (basicBot.room.usersUsedRoulette[i].id == id) {
+                                      oldTime = basicBot.room.usersUsedRoulette[i].time;
+                                      usedRoulette = true;
+                                      indexArrUsedRoulette = i;
+                                  }
+                              }
+
+                              if (usedRoulette) {
+                                  timeInMinutes = (basicBot.settings.rouletteCooldown + 1) - (Math.floor((oldTime - Date.now()) * Math.pow(10, -5)) * -1);
+                                  rouletteCd = timeInMinutes > 0 ? true : false;
+                                  if (rouletteCd == false)
+                                      basicBot.room.usersUsedRoulette.splice(indexArrUsedRoulette, 1);
+                              }
+
+                              if (rouletteCd == false || usedRoulette == false) {
+                                  var user = {id: id, time: Date.now()};
+                                  basicBot.room.usersUsedRoulette.push(user);
+                              }
+                          }
+
+                          if (!inDjList) {
+                              return API.sendChat(subChat(basicBot.chat.thorNotClose, {name: from}));
+                          } else if (rouletteCd) {
+                              return API.sendChat(subChat(basicBot.chat.thorcd, {name: from, time: timeInMinutes}));
                     }
+	          }
                 }
             },
 
@@ -3132,7 +3158,7 @@
                                 }
                             }
                         }
-                    }
+		    }
                 }
             },
 
