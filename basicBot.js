@@ -3036,8 +3036,6 @@
                     else {
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
-			var g_iCount = new Number();
-                        // de 30 a 0 //
                         var g_iCount = 30;
                          function startCountdown(){
                          if((g_iCount - 1) >= 0){
