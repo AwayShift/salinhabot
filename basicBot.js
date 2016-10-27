@@ -3064,16 +3064,10 @@
                                       basicBot.room.usersUsedRoulette.splice(indexArrUsedRoulette, 1);
                               }
 
-                              if (rouletteCd == false || usedRoulette == false) {
-                                  var user = {id: id, time: Date.now()};
-                                  basicBot.room.usersUsedRoulette.push(user);
-                              }
                           }
 
                           if (!inDjList) {
-                              return API.sendChat(subChat(basicBot.chat.thorNotClose, {name: from}));
-                          } else if (rouletteCd) {
-                              return API.sendChat(subChat(basicBot.chat.thorcd, {name: from, time: timeInMinutes}));
+                              return API.sendChat(subChat(basicBot.chat.roulettecd, {name: from, time: timeInMinutes}));
                     }
 	          }
                 }
