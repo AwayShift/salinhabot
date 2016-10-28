@@ -437,7 +437,7 @@
                     /*var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);*/
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name}));
+                    API.sendChat(subChat(basicBot.chat.winnerpickedpp, {name: name}));
                 }
             },
             usersUsedThor: []
