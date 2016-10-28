@@ -1478,7 +1478,7 @@
              basicBot.room.autorouletteInterval = setInterval(function () {
                 basicBot.room.autorouletteFunc();
             }, 5 * 60 * 1000);
-			basicBot.room.autorouletteppInterval = setInterval(function () {
+	     basicBot.room.autorouletteppInterval = setInterval(function () {
                 basicBot.room.autorouletteFunc();
             }, 2 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
@@ -3120,7 +3120,7 @@
                 }
             },
 
-            rouletteCommand: {
+            roletaCommand: {
                 command: 'roleta',
                 rank: 'mod',
                 type: 'exact',
