@@ -1695,7 +1695,7 @@
                     else {
                         var ind = basicBot.room.roulettepp.participants.indexOf(chat.uid);
                         if (ind > -1) {
-                            basicBot.room.roulettetroll.participants.splice(ind, 1);
+                            basicBot.room.roulettepp.participants.splice(ind, 1);
                             API.sendChat(subChat(basicBot.chat.roulettesair, {name: chat.un}));
                         }
                     }
