@@ -432,7 +432,7 @@
                 endRoulette: function () {
                     basicBot.room.roulettepp.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulettepp.participants.length);
-                    var winner = basicBot.room.roulette.participants[ind];
+                    var winner = basicBot.room.roulettepp.participants[ind];
                     basicBot.room.roulettepp.participants = [];
                     /*var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);*/
                     var user = basicBot.userUtilities.lookupUser(winner);
