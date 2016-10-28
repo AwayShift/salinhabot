@@ -27,8 +27,8 @@
 
     var kill = function () {
         clearInterval(basicBot.room.autodisableInterval);
-	    clearInterval(basicBot.room.autorouletteInterval);
-		clearInterval(basicBot.room.autorouletteppInterval);
+	clearInterval(basicBot.room.autorouletteInterval);
+	clearInterval(basicBot.room.autorouletteppInterval);
         clearInterval(basicBot.room.afkInterval);
         basicBot.status = false;
     };
@@ -397,7 +397,6 @@
                         API.sendChat(subChat(basicBot.chat.isopen2, { position: pos}));
                     }, 2 * 1000);
                 },
-
                 endRoulette: function () {
                     basicBot.room.roulette.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
@@ -413,7 +412,7 @@
                     }, 1 * 1000, winner, pos);
                 }
             },
-			roulettepp: {
+		roulettepp: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -3140,8 +3139,8 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (!basicBot.room.roulettetroll.rouletteStatus) {
-                            basicBot.room.roulettetroll.startRoulette();
+                        if (!basicBot.room.roulettepp.rouletteStatus) {
+                            basicBot.room.roulettepp.startRoulette();
                         }
                     }
                 }
