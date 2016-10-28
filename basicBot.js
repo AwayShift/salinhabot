@@ -346,7 +346,7 @@
                     API.chatLog('!roleta');
                 }
             },
-			            autorouletteppInterval: null,
+			autorouletteppInterval: null,
             autorouletteFunc: function () {
                 if (basicBot.status && basicBot.settings.autoroulettepp) {
                     API.chatLog('!roletapp');
@@ -432,15 +432,18 @@
                 endRoulette: function () {
                     basicBot.room.roulettepp.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulettepp.participants.length);
-                    var winner = basicBot.room.roulettepp.participants[ind];
+                    var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulettepp.participants = [];
-                    var posx = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    /*var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);*/
+                    var pos = (basicBot.settings.roulettepos);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
                     setTimeout(function (winner, pos) {
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
+                }
+            },
                 }
             },
             usersUsedThor: []
