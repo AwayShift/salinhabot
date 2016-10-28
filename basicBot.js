@@ -1473,10 +1473,10 @@
             }, 60 * 60 * 1000);
              basicBot.room.autorouletteInterval = setInterval(function () {
                 basicBot.room.autorouletteFunc();
-            }, 5 * 60 * 1000);
+            }, 7 * 60 * 1000);
 	     basicBot.room.autorouletteppInterval = setInterval(function () {
                 basicBot.room.autorouletteFunc();
-            }, 2 * 60 * 1000);
+            }, 4 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
             basicBot.status = true;
             API.sendChat('/cap ' + basicBot.settings.startupCap);
