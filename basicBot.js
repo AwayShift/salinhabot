@@ -3117,7 +3117,7 @@
                         else {
                             basicBot.settings.etaRestriction = !basicBot.settings.etaRestriction;
                             return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.etarestriction}));
-                        }
+			}
                     }
                 }
             },
