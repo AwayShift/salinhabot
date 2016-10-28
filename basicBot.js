@@ -272,9 +272,10 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            autoroulette: true,
-			autoroulettepp: true,
+            autoroulette: false,
 	        roulettepos: 2,
+	    autoroulettepp: false,
+		 roulettepos: 2,
             voteSkip: false,
             voteSkipLimit: 10,
             historySkip: false,
@@ -422,10 +423,10 @@
                         basicBot.room.roulettepp.endRoulette();
                     }, 60 * 1000);
                     setTimeout(function () {
-                        API.sendChat(basicBot.chat.isopentroll);
+                        API.sendChat(basicBot.chat.isopenpp);
                     }, 1 * 1000);
                     setTimeout(function () {
-                        API.sendChat(basicBot.chat.isopentroll2);
+                        API.sendChat(basicBot.chat.isopenpp2);
                     }, 2 * 1000);
                 },
                 endRoulette: function () {
