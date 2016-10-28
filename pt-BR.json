@@ -89,7 +89,7 @@
     "isopenpp": "\/me @djs Doçuras ou travessuras? Use !doçura ou !travessura para entrar!",
     "isopenpp2": "\/me (A bruxa Está solta distribuindo PP para os vencedores)",
     "winnerpicked": "\/me Um vencedor foi escolhido! @%%NAME%% ganhou a posição %%POSITION%%.",
-    "winnerpickedpp": "\/me Douçura para @%%NAME%% acaba de ganhar a roleta! ",
+    "winnerpickedpp": "\/me Doçura para @%%NAME%% acaba de ganhar a roleta! ",
     "ball": "\/me A pergunta de %%NAME%% foi: \"%%QUESTION%%\" e a resposta de %%BOTNAME%% \u00e9: \"%%RESPONSE%%\"",
     "notghosting": "[%%NAME1%%] %%NAME2%% n\u00e3o virou fantasma.",
     "ghosting": "[%%NAME1%%] %%NAME2%% deve ter virado fantasma.",
