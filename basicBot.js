@@ -435,13 +435,9 @@
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulettepp.participants = [];
                     /*var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);*/
-                    var pos = (basicBot.settings.roulettepos);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
-                    setTimeout(function (winner, pos) {
-                        basicBot.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
+                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name}));
                 }
             },
             usersUsedThor: []
