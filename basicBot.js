@@ -347,7 +347,7 @@
                 }
             },
 			autorouletteppInterval: null,
-            autorouletteFunc: function () {
+            autorouletteppFunc: function () {
                 if (basicBot.status && basicBot.settings.autoroulettepp) {
                     API.chatLog('!roletapp');
                 }
@@ -1473,9 +1473,9 @@
             }, 60 * 60 * 1000);
              basicBot.room.autorouletteInterval = setInterval(function () {
                 basicBot.room.autorouletteFunc();
-            }, 7 * 60 * 1000);
+            }, 2 * 60 * 1000);
 	     basicBot.room.autorouletteppInterval = setInterval(function () {
-                basicBot.room.autorouletteFunc();
+                basicBot.room.autorouletteppFunc();
             }, 4 * 60 * 1000);
             basicBot.loggedInID = API.getUser().id;
             basicBot.status = true;
