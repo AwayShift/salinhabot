@@ -1671,7 +1671,7 @@
                 }
             },
 			 doçuraCommand: {
-                command: ['doçura', 'travessura'],
+                command: 'doçura',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -1686,7 +1686,7 @@
                 }
             },
 			 sairCommand: {
-                command: 'sair',
+                command: 'travessura',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
