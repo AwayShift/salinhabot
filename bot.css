@@ -1,3 +1,5 @@
+/* Teste Video */
+#playback-container {width: 444px !important; height: 235px !important; left: 10px !important; } #playback {right: 280px !important; left: 280px !important; z-index:6; } #playback-controls {left: 25px !important; }
 /* CORES CHAT */
 /* HOST */
 #user-lists .group.host {
