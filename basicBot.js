@@ -1610,7 +1610,7 @@
 
                         var space = msg.indexOf(' ');
                         if (space === -1) {
-                            API.sendChat(basicBot.chat.eatbrigar);
+                            API.sendChat(basicBot.chat.eatbrigar, {namefrom: chat.un});
                             return false;
                         }
                         else {
