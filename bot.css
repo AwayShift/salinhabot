@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:500");
 /* CORES CHAT */
 /* HOST */
 #user-lists .group.host {
@@ -322,15 +323,27 @@ div.level.earned.ep .label {
 #chat .mention .msg {
     background: linear-gradient(to right,rgba(255, 118, 118, 0) 0,rgba(44, 124, 41, 0.27) 100%);
 }
+/* Fonte */
+#chat-messages .emote .icon {
+    /*left: 4px;*/
+}
+#chat .emote .text {
+    font-family: 'Ubuntu', sans-serif;
+}
+#chat-messages .text {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
 #chat .from {
-    font-family: Ubuntu, serif;
     position: relative;
     margin-bottom: 3px;
     font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #chat-input-field {
-    font-family: Ubuntu, serif;
     position: absolute;
     top: 7px;
     left: 10px;
@@ -340,18 +353,8 @@ div.level.earned.ep .label {
     border: 0;
     background: 0 0;
     color: #eee;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
-}
-#chat-messages {
-    font-family: Ubuntu, serif;
-    position: absolute;
-    top: 47px;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-    color: #e2f4e2;
-    font-size: 14px;
 }
 
 #playlist-panel {
