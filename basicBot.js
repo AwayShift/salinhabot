@@ -250,7 +250,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Salinha Bot",
+            botName: "Bot Basico",
             language: "portuguese",
             chatLink: "https://rawgit.com/AwayShift/salinhabot/master/pt-BR.json",
             scriptLink: "https://rawgit.com/AwayShift/salinhabot/master/basicBot.js",
